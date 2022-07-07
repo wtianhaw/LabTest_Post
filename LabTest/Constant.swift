@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 struct Constant {
-    static var SEARCH_KEYWORD: String = ""
     
     static var BASE_URL_STRING: String = "https://dev.codezero.app"
     

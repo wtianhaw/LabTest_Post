@@ -27,6 +27,10 @@ class PostListVC: BaseViewController {
         super.viewDidLoad()
         setupCollectionView()
         bindVM()
+        setupUI()
+    }
+    
+    private func setupUI(){
         let barAppearance = UINavigationBarAppearance()
         barAppearance.backgroundColor = UIColor(named: "theme")
         barAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -36,17 +40,6 @@ class PostListVC: BaseViewController {
         self.navigationController?.navigationBar.barTintColor = .white
         self.view.backgroundColor = UIColor(named: "theme_bg")
         self.collectionView.backgroundColor = UIColor(named: "theme_bg")
-    }
-    
-    private func setupUI(){
-        //        searchBar.placeholder = "Search your image by keywords"
-        self.navigationController?.navigationBar.barTintColor = .black
-        self.title = "My Post Cards"
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.standardAppearance = appearance;
-        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
     
     private func setupCollectionView(){
@@ -115,23 +108,4 @@ extension PostListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         return CGSize(width: cellwidth, height: height)
     }
     
-}
-
-extension UINavigationController {
-    func transparentNavigationBar() {
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.isTranslucent = true
-    }
-    
-    func setTintColor(_ color: UIColor) {
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
-        self.navigationBar.tintColor = color
-    }
-    
-    func backgroundColor(_ color: UIColor) {
-        navigationBar.setBackgroundImage(nil, for: .default)
-        navigationBar.barTintColor = color
-        navigationBar.shadowImage = UIImage()
-    }
 }

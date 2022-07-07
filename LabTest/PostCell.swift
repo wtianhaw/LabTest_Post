@@ -49,13 +49,12 @@ class PostCell: UICollectionViewCell {
             descriptionStackView.backgroundColor = Constant.hexStringToUIColor(hex: model.color?.bar?.bottom ?? "FFFFFF")
             topView.backgroundColor = Constant.hexStringToUIColor(hex: model.color?.bar?.top ?? "FFFFFF")
             
-//            btnView.text=
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        self.contentView.backgroundColor = .blue
+        //        self.contentView.backgroundColor = .blue
     }
-
+    
 }
